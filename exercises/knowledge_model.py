@@ -23,7 +23,7 @@ class Knowledge(Base):
 				self.topic,
 				self.rating)
 x = Knowledge(interest_id=1, topic = "Music", wikiArticle = "guitars" , rating = 10)
-print(x)
+# print(x)
 
 			
 
