@@ -17,6 +17,11 @@ def add_article(topic, wikiArticle, rating):
 	session.add(knowledge_object)
 	session.commit()
 
+add_article("qwer", "fdfa" , 10)
+add_article("fdfa", "qwer" , 10)
+add_article("qwer", "fdfa" , 10)
+add_article("fdfa", "qwer" , 10)
+
 
 	
 	
@@ -54,12 +59,26 @@ def delete_all_articles():
 	session.query(Knowledge).delete()
    	session.commit()
 
-#add_article("qwer", "fdfa",10 )
-#print(query_article_by_topic("qwer"))
+add_article("qwer", "fdfa",10 )
+print(query_article_by_topic("qwer"))
 #delete_article_by_topic("qwer")
 print(query_all_articles())
-delete_all_articles()
+#delete_all_articles()
 	
 
-# def edit_article_rating():
+def edit_article_rating(update_rating, article_title):
+	article_object = session.query(
+    	Knowledge).filter_by(
+    	topic= article_title).first()
+	print(article_object)
+	article_object.rating = update_rating
+	session.commit()
+
+edit_article_rating (7, "fdfa")
+
+
+
+
+
+
 	
